@@ -1,6 +1,8 @@
 - create a branch 'gh-pages'
 - the slideshow will appear at: https://petrum.github.io/programming4kids/programming4kids02.slides.html
 - it takes about 1 min for chnages to propagate to the web
+- $> jupyter notebook
+- https://localhost:8889
 
 ==Develop==
 git branch gh-pages
