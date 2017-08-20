@@ -1,0 +1,20 @@
+
+                                  | command line
+                                  |  parameters
+                                  |
+                                  v
+                +---------------------------------+
+                |                                 |
+                |                                 |
+    stdin       |                                 |   stdout
+  ==========>   |           application           | ===========>
+   std:cin      |(C/C++, Python, Ruby, Perl etc)  |  std::cout
+                |                                 | (buffered)
+                +---------------------------------+
+                          |            |
+                          |            |
+                  stderr  |            | return code
+                 std:cerr |            |
+              (unbuffered)|            |
+                          v            v
+                          
