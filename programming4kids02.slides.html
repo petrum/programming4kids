@@ -11914,6 +11914,36 @@ We run the program twice: we first give no parameters (and surprinsingly notice 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Pipes,-parameters-and-return-code">Pipes, parameters and return code<a class="anchor-link" href="#Pipes,-parameters-and-return-code">&#182;</a></h1>
+<pre><code>`
+
+                                  | command line
+                                  |  parameters
+                                  | (argc/argv)
+                                  v
+                +---------------------------------+
+                |                                 |
+                |                                 |
+    stdin       |                                 |   stdout
+  ==========&gt;   |           application           | ===========&gt;
+   std:cin      |(C/C++, Python, Ruby, Perl etc)  |  std::cout
+                |                                 | (buffered)
+                +---------------------------------+
+                          |            |
+                          |            |
+                  stderr  |            | return code
+                 std:cerr |            |
+              (unbuffered)|            |
+                          v            v</code></pre>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Running---stdout-redirection">Running - stdout redirection<a class="anchor-link" href="#Running---stdout-redirection">&#182;</a></h1><p><br>
 We introduce the putput redirection: by using the <code>&gt;</code> redirection operator we redirect the <code>stdout</code> from the terminal into a file!</p>
 <div class="highlight"><pre><span></span><span class="gp">petrum@nuc ~/programming$</span> ls -ltr

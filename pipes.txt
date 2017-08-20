@@ -1,7 +1,7 @@
 
                                   | command line
                                   |  parameters
-                                  |
+                                  | (argc/argv)
                                   v
                 +---------------------------------+
                 |                                 |
