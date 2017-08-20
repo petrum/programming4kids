@@ -2,7 +2,7 @@
 - the slideshow will appear at: https://petrum.github.io/programming4kids/programming4kids02.slides.html
 - it takes about 1 min for chnages to propagate to the web
 - $> jupyter notebook
-- https://localhost:8889
+- use firefox to go to https://localhost:8889 (in chrome the editing doesn't work fine)
 
 ==Develop==
 git branch gh-pages
