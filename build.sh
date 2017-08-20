@@ -1,6 +1,7 @@
 #!/bin/bash
 
 jupyter-nbconvert --to slides programming4kids02.ipynb
+
 git commit -ammisc
 git push origin gh-pages
 
