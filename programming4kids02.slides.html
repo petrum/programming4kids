@@ -11830,10 +11830,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Hello">Hello<a class="anchor-link" href="#Hello">&#182;</a></h1><ul>
-<li>point one</li>
-</ul>
-
+<h1 id="C++-presentation-for-my-beatiful-daughter">C++ presentation for my beatiful daughter<a class="anchor-link" href="#C++-presentation-for-my-beatiful-daughter">&#182;</a></h1><h2 id="by-Petru-Marginean">by Petru Marginean<a class="anchor-link" href="#by-Petru-Marginean">&#182;</a></h2>
 </div>
 </div>
 </div></section></section><section><section>
@@ -11842,11 +11839,21 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Simple-C++-app">Simple C++ app<a class="anchor-link" href="#Simple-C++-app">&#182;</a></h1><p>petrum@nuc ~/programming$ vi main.cpp</p>
+<p>petrum@nuc ~/programming$ ls -ltr
+total 4
+-rw-rw-r-- 1 petrum petrum 267 Aug 20 08:21 main.cpp
+petrum@nuc ~/programming$ cat main.cpp</p>
 <h1>include <iostream></h1>
-<p>int main(int argc)
-{</p>
-<p>}</p>
-<p>$&gt; ls</p>
+<p>int main(int argc, char* argv[])
+{
+    std::cerr &lt;&lt; "We have received " &lt;&lt; argc &lt;&lt; " arguments.\n";
+    for (int i = 0; i &lt; argc; ++i)
+    {
+        std::cout &lt;&lt; "- argv[" &lt;&lt; i &lt;&lt; "] = '" &lt;&lt; argv[i] &lt;&lt; "'" &lt;&lt; std::endl;
+    }
+    return argc;
+}</p>
 
 </div>
 </div>
@@ -11856,6 +11863,15 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Compilation-+-linking">Compilation + linking<a class="anchor-link" href="#Compilation-+-linking">&#182;</a></h1><p>petrum@nuc ~/programming$ g++ main.cpp</p>
+<p>petrum@nuc ~/programming$ ls -ltr<br>
+total 16
+-rw-rw-r-- 1 petrum petrum  267 Aug 20 08:21 main.cpp
+-rwxrwxr-x 1 petrum petrum 9320 Aug 20 08:25 a.out</p>
+<p>petrum@nuc ~/programming$ file main.cpp 
+main.cpp: C source, ASCII text</p>
+<p>petrum@nuc ~/programming$ file a.out
+a.out: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=123ba366434f809a5c2a429905b2c3f0a0243489, not stripped</p>
 
 </div>
 </div>
