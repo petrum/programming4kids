@@ -5,7 +5,6 @@
                                   v
                 +---------------------------------+
                 |                                 |
-                |                                 |
     stdin       |                                 |   stdout
   ==========>   |           application           | ===========>
    std:cin      |(C/C++, Python, Ruby, Perl etc)  |  std::cout
