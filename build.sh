@@ -1,7 +1,7 @@
 #!/bin/bash
 
-jupyter-nbconvert --to slides programming4kids02.ipynb
-
+jupyter-nbconvert --to slides programming4kids*.ipynb
+git add programming4kids*.ipynb
 git commit -ammisc
 git push origin master
 git checkout gh-pages
