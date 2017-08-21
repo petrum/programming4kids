@@ -1,7 +1,7 @@
 #!/bin/bash
 
 git add programming4kids*.ipynb
-jupyter-nbconvert --to slides programming4kids*.ipynb
+jupyter-nbconvert --to slides programming4kids*.ipynb --reveal-prefix=reveal.js
 git add programming4kids*.slides.html
 git commit -ammisc
 git push origin master
