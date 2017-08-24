@@ -2,7 +2,7 @@
 set -e
 
 git pull
-git add programming4kids*.ipynb
+git add *.ipynb
 jupyter-nbconvert --to slides programming4kids*.ipynb --reveal-prefix=reveal.js
 git add programming4kids*.slides.html
 git commit -ammisc
