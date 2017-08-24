@@ -12,5 +12,12 @@ https://help.github.com/articles/creating-project-pages-using-the-command-line/
 - the slideshow will appear at: https://petrum.github.io/programming4kids/programming4kids02.slides.html
 - it takes about 1 min for chnages to propagate to the web
 
+Nice demo ('transition', 'theme', 's', 'b'):
 http://www.slideviper.oquanta.info/tutorial/slideshow_tutorial_slides.html?transition=cube#/11
+
+Available themes:
+
+petrum@xps13 ~/programming4kids[master]$ ls reveal.js/css/theme/
+README.md  black.css  league.css  night.css  simple.css  solarized.css  template
+beige.css  blood.css  moon.css    serif.css  sky.css     source         white.css
 
