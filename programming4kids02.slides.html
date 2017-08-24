@@ -36,7 +36,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 
 <!-- Loading the mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -58,7 +58,7 @@ if( window.location.search.match( /print-pdf/gi ) ) {
     <!-- End of mathjax configuration -->
 
 <!-- Get Font-awesome from cdn -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css">
 
 <style type="text/css">
     /*!
@@ -67,8 +67,8 @@ if( window.location.search.match( /print-pdf/gi ) ) {
 *
 */
 /*!
- * Bootstrap v3.3.7 (http://getbootstrap.com)
- * Copyright 2011-2016 Twitter, Inc.
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -1163,6 +1163,7 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -2591,6 +2592,7 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3081,6 +3083,7 @@ select[multiple].input-lg {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -8811,9 +8814,6 @@ body > #header .header-bar {
     margin-left: 10px;
   }
 }
-[dir="rtl"] #ipython_notebook {
-  float: right !important;
-}
 #noscript {
   width: auto;
   padding-top: 16px;
@@ -9016,14 +9016,8 @@ span#login_widget > .button .badge,
  *
  * Author: Jupyter Development Team
  */
-[dir="rtl"] #tabs li {
-  float: right;
-}
 ul#tabs {
   margin-bottom: 4px;
-}
-[dir="rtl"] ul#tabs {
-  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
@@ -9046,16 +9040,6 @@ ul.breadcrumb span {
 }
 .list_toolbar .tree-buttons {
   padding-top: 1px;
-}
-[dir="rtl"] .list_toolbar .tree-buttons {
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-right {
-  padding-top: 1px;
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-left {
-  float: right !important;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9192,9 +9176,6 @@ ul.breadcrumb span {
 #tree-selector {
   padding-right: 0px;
 }
-[dir="rtl"] #tree-selector a {
-  float: right;
-}
 #button-select-all {
   min-width: 50px;
 }
@@ -9284,9 +9265,6 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
-[dir="rtl"] #new-menu {
-  text-align: right;
-}
 .kernel-menu-icon {
   padding-right: 12px;
   width: 24px;
@@ -9331,9 +9309,6 @@ ul#new-menu {
 }
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
-}
-[dir="rtl"] #running .col-sm-8 {
-  float: right !important;
 }
 .delete-button {
   display: none;
@@ -9630,7 +9605,6 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
-  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -9651,6 +9625,11 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
+}
+@-moz-document url-prefix() {
+  div.inner_cell {
+    overflow-x: hidden;
+  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -11321,7 +11300,7 @@ div#pager .ui-resizable-handle::after {
 }
 .shortcut_key {
   display: inline-block;
-  width: 21ex;
+  width: 20ex;
   text-align: right;
   font-family: monospace;
 }
@@ -11633,7 +11612,6 @@ ul.typeahead-list > li > a {
   box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
 }
 .terminal-app .terminal {
-  width: 100%;
   float: left;
   font-family: monospace;
   color: white;
@@ -11647,9 +11625,6 @@ ul.typeahead-list > li > a {
 .terminal-app .terminal dummy-screen {
   line-height: 1em;
   font-size: 14px;
-}
-.terminal-app .terminal .xterm-rows {
-  padding: 10px;
 }
 .terminal-app .terminal-cursor {
   color: black;
@@ -11850,30 +11825,32 @@ a.anchor-link {
 <div class="reveal">
 <div class="slides">
 <section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="C++-presentation-for-my-beautiful-daughter-Maria.">C++ presentation for my beautiful daughter Maria.<a class="anchor-link" href="#C++-presentation-for-my-beautiful-daughter-Maria.">&#194;&#182;</a></h1><h2 id="by-Petru-Marginean">by Petru Marginean<a class="anchor-link" href="#by-Petru-Marginean">&#194;&#182;</a></h2><h3 id="part-2">part 2<a class="anchor-link" href="#part-2">&#194;&#182;</a></h3>
+<h1 id="C++-presentation-for-my-beautiful-daughter-Maria.">C++ presentation for my beautiful daughter Maria.<a class="anchor-link" href="#C++-presentation-for-my-beautiful-daughter-Maria.">&#182;</a></h1><h2 id="by-Petru-Marginean">by Petru Marginean<a class="anchor-link" href="#by-Petru-Marginean">&#182;</a></h2><h3 id="part-2">part 2<a class="anchor-link" href="#part-2">&#182;</a></h3>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Simple-C++-app">Simple C++ app<a class="anchor-link" href="#Simple-C++-app">&#194;&#182;</a></h1><p><br>
+<h1 id="Simple-C++-app">Simple C++ app<a class="anchor-link" href="#Simple-C++-app">&#182;</a></h1><p><br>
 Nothing special, just use <code>vi</code> to edit a simple <code>C++</code> program. The code prints at <code>stderr</code> the number of parameters, and at <code>stdout</code> the value of the parameters.</p>
-<div class="highlight"><pre><span class="gp">petrum@nuc ~/programming4kids$</span> vi main.cpp
+<div class="highlight"><pre><span></span><span class="gp">petrum@nuc ~/programming4kids$</span> vi main.cpp
 
 <span class="gp">petrum@nuc ~/programming4kids$</span> ls -ltr
 <span class="go">total 4</span>
 <span class="go">-rw-rw-r-- 1 petrum petrum 267 Aug 20 08:21 main.cpp</span>
 <span class="gp">petrum@nuc ~/programming4kids$</span> cat main.cpp
 </pre></div>
-<div class="highlight"><pre><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="err"> </span>
-<span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
 <span class="p">{</span>
     <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;We have received &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">argc</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; arguments.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">argc</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
@@ -11887,13 +11864,14 @@ Nothing special, just use <code>vi</code> to edit a simple <code>C++</code> prog
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Compilation-+-linking">Compilation + linking<a class="anchor-link" href="#Compilation-+-linking">&#194;&#182;</a></h1><p><br>
+<h1 id="Compilation-+-linking">Compilation + linking<a class="anchor-link" href="#Compilation-+-linking">&#182;</a></h1><p><br>
 Since we have a single compilation unit (<code>main.cpp</code>) we compile/link in a single step. We also introduce the <code>file</code> command, very handy to describe the file types (based on the file content)</p>
-<div class="highlight"><pre><span class="gp">petrum@nuc ~/programming4kids$</span> g++ main.cpp 
+<div class="highlight"><pre><span></span><span class="gp">petrum@nuc ~/programming4kids$</span> g++ main.cpp 
 
 <span class="gp">petrum@nuc ~/programming4kids$</span> ls -ltr      
 <span class="go">total 16</span>
@@ -11910,13 +11888,14 @@ Since we have a single compilation unit (<code>main.cpp</code>) we compile/link 
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Running-the-program">Running the program<a class="anchor-link" href="#Running-the-program">&#194;&#182;</a></h1><p><br>
+<h1 id="Running-the-program">Running the program<a class="anchor-link" href="#Running-the-program">&#182;</a></h1><p><br>
 We run the program twice: we first give no parameters (and surprinsingly notice the <code>argc == 1</code>!) and the second time we pass some random parameters (strings separated by spaces)</p>
-<div class="highlight"><pre><span class="gp">petrum@nuc ~/programming4kids$</span> ./a.out 
+<div class="highlight"><pre><span></span><span class="gp">petrum@nuc ~/programming4kids$</span> ./a.out 
 <span class="go">We have received 1 arguments.</span>
 <span class="go">- argv[0] = &#39;./a.out&#39;</span>
 
@@ -11930,11 +11909,12 @@ We run the program twice: we first give no parameters (and surprinsingly notice 
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Pipes,-parameters-and-return-code">Pipes, parameters and return code<a class="anchor-link" href="#Pipes,-parameters-and-return-code">&#194;&#182;</a></h1><p><br>
+<h1 id="Pipes,-parameters-and-return-code">Pipes, parameters and return code<a class="anchor-link" href="#Pipes,-parameters-and-return-code">&#182;</a></h1><p><br>
 We use in general the command line parameters to parameterize the app, the <code>stdin</code> to provide the data we work on, <code>stdout</code> to output dthe generated data (buffered), the <code>stderr</code> to output the error messages (unbuffered, fast display), and the error code to signal success / errors to the caller.</p>
 
 <pre><code>
@@ -11959,13 +11939,14 @@ We use in general the command line parameters to parameterize the app, the <code
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Running---stdout-redirection">Running - stdout redirection<a class="anchor-link" href="#Running---stdout-redirection">&#194;&#182;</a></h1><p><br>
+<h1 id="Running---stdout-redirection">Running - stdout redirection<a class="anchor-link" href="#Running---stdout-redirection">&#182;</a></h1><p><br>
 We introduce the output redirection: by using the <code>&gt;</code> redirection operator we redirect the <code>stdout</code> from the terminal into a file!</p>
-<div class="highlight"><pre><span class="gp">petrum@nuc ~/programming4kids$</span> ls -ltr
+<div class="highlight"><pre><span></span><span class="gp">petrum@nuc ~/programming4kids$</span> ls -ltr
 <span class="go">total 16</span>
 <span class="go">-rw-rw-r-- 1 petrum petrum  267 Aug 20 08:21 main.cpp</span>
 <span class="go">-rwxrwxr-x 1 petrum petrum 9320 Aug 20 08:25 a.out</span>
@@ -11988,13 +11969,14 @@ We introduce the output redirection: by using the <code>&gt;</code> redirection 
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Running---full-redirection">Running - full redirection<a class="anchor-link" href="#Running---full-redirection">&#194;&#182;</a></h1><p><br>
+<h1 id="Running---full-redirection">Running - full redirection<a class="anchor-link" href="#Running---full-redirection">&#182;</a></h1><p><br>
 Here we redirect both <code>stdout</code> and <code>stderr</code>. The app prints nothing on the screen anymore. Both <code>stdout</code> and <code>stderr</code> do into different files. The <code>stdout</code> has the <code>1</code> file handler (or the default) and <code>stderr</code> has the <code>2</code> file handler.</p>
-<div class="highlight"><pre><span class="gp">petrum@nuc ~/programming4kids$</span> ./a.out Hello World! 2&gt;err.std &gt;out.std
+<div class="highlight"><pre><span></span><span class="gp">petrum@nuc ~/programming4kids$</span> ./a.out Hello World! 2&gt;err.std &gt;out.std
 
 <span class="gp">petrum@nuc ~/programming4kids$</span> ls -ltr
 <span class="go">total 24</span>
@@ -12010,13 +11992,14 @@ Here we redirect both <code>stdout</code> and <code>stderr</code>. The app print
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Running-with-appending">Running with appending<a class="anchor-link" href="#Running-with-appending">&#194;&#182;</a></h1><p><br>
+<h1 id="Running-with-appending">Running with appending<a class="anchor-link" href="#Running-with-appending">&#182;</a></h1><p><br>
 We use the <code>&gt;&gt;</code> operator to append to a file (instead of overwriting the file content)</p>
-<div class="highlight"><pre><span class="gp">petrum@nuc ~/programming4kids$</span> ./a.out Hello World! 2&gt;&gt;err.std &gt;&gt;out.std
+<div class="highlight"><pre><span></span><span class="gp">petrum@nuc ~/programming4kids$</span> ./a.out Hello World! 2&gt;&gt;err.std &gt;&gt;out.std
 
 <span class="gp">petrum@nuc ~/programming4kids$</span> ls -ltr
 <span class="go">total 24</span>
@@ -12033,15 +12016,16 @@ We use the <code>&gt;&gt;</code> operator to append to a file (instead of overwr
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Running-&#8211;-error-code">Running &#8211; error code<a class="anchor-link" href="#Running-&#8211;-error-code">&#194;&#182;</a></h1><p><br>
+<h1 id="Running-&#8211;-error-code">Running &#8211; error code<a class="anchor-link" href="#Running-&#8211;-error-code">&#182;</a></h1><p><br>
 If we are not interested in reading the app output (and we want to discard it) we can use <code>/dev/null</code> as the file destination. We also can read the code the app returns (in this simple example equals to the number of parameters; remember <code>return argc;</code> in <code>int main()</code>?)</p>
 <p>In fact any Linux command returns an error code!</p>
 <p>For example below the <code>ls</code> command return <code>0</code> (no error) if everything is fine or <code>2</code> if the listed fine is not available. Please note each command overides the return code produce by the previous command.</p>
-<div class="highlight"><pre><span class="gp">petrum@nuc ~/programming4kids$</span> ./a.out Hello World! &gt;/dev/null
+<div class="highlight"><pre><span></span><span class="gp">petrum@nuc ~/programming4kids$</span> ./a.out Hello World! &gt;/dev/null
 <span class="go">We have received 3 arguments.</span>
 
 <span class="gp">petrum@nuc ~/programming4kids$</span> <span class="nb">echo</span> <span class="nv">$?</span>
@@ -12063,13 +12047,14 @@ If we are not interested in reading the app output (and we want to discard it) w
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="More-&#8216;file&#8217;-output">More &#8216;file&#8217; output<a class="anchor-link" href="#More-&#8216;file&#8217;-output">&#194;&#182;</a></h1><p><br>
+<h1 id="More-&#8216;file&#8217;-output">More &#8216;file&#8217; output<a class="anchor-link" href="#More-&#8216;file&#8217;-output">&#182;</a></h1><p><br>
 Using the <code>*</code> and running the <code>file</code> comand with multiple files in a single shot.</p>
-<div class="highlight"><pre><span class="gp">petrum@nuc ~/programming4kids$</span> file *
+<div class="highlight"><pre><span></span><span class="gp">petrum@nuc ~/programming4kids$</span> file *
 <span class="go">a.out:    ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=123ba366434f809a5c2a429905b2c3f0a0243489, not stripped</span>
 <span class="go">err.std:  ASCII text</span>
 <span class="go">main.cpp: C source, ASCII text</span>
@@ -12079,13 +12064,14 @@ Using the <code>*</code> and running the <code>file</code> comand with multiple 
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Compilation-only">Compilation only<a class="anchor-link" href="#Compilation-only">&#194;&#182;</a></h1><p><br>
+<h1 id="Compilation-only">Compilation only<a class="anchor-link" href="#Compilation-only">&#182;</a></h1><p><br>
 Instead of doing compilation + linking in a single shot we can do only the compile part (using the <code>-c</code> parameter). A single object file is generated from the compilation unit (the same filename, but with the <code>*.o</code> extension)</p>
-<div class="highlight"><pre><span class="gp">petrum@nuc ~/programming4kids$</span> g++ -c main.cpp
+<div class="highlight"><pre><span></span><span class="gp">petrum@nuc ~/programming4kids$</span> g++ -c main.cpp
 
 <span class="gp">petrum@nuc ~/programming4kids$</span> <span class="nb">echo</span> <span class="nv">$?</span>
 <span class="go">0</span>
@@ -12105,13 +12091,14 @@ Instead of doing compilation + linking in a single shot we can do only the compi
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Compilation-+-linking">Compilation + linking<a class="anchor-link" href="#Compilation-+-linking">&#194;&#182;</a></h1><p><br>
+<h1 id="Compilation-+-linking">Compilation + linking<a class="anchor-link" href="#Compilation-+-linking">&#182;</a></h1><p><br>
 After compilation only we can link together the multiple <code>*.o</code> and libraries. Please note in the linking phase we do not use the source code anymore (not <code>*.cpp</code>, only <code>*.o</code> and eventually <code>*.a</code> or <code>*.so</code>)</p>
-<div class="highlight"><pre><span class="gp">petrum@nuc ~/programming4kids$</span> ls -ltr
+<div class="highlight"><pre><span></span><span class="gp">petrum@nuc ~/programming4kids$</span> ls -ltr
 <span class="go">total 4</span>
 <span class="go">-rw-rw-r-- 1 petrum petrum 267 Aug 20 08:51 main.cpp</span>
 
@@ -12134,13 +12121,14 @@ After compilation only we can link together the multiple <code>*.o</code> and li
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Specifying-output-name-(&#8216;-o-name&#8217;)">Specifying output name (&#8216;-o name&#8217;)<a class="anchor-link" href="#Specifying-output-name-(&#8216;-o-name&#8217;)">&#194;&#182;</a></h1><p><br>
+<h1 id="Specifying-output-name-(&#8216;-o-name&#8217;)">Specifying output name (&#8216;-o name&#8217;)<a class="anchor-link" href="#Specifying-output-name-(&#8216;-o-name&#8217;)">&#182;</a></h1><p><br>
 Instead of the default <code>a.out</code> out file name we can specify the out filename using the <code>-o</code> parameter. Of course we could use the <code>mv</code> command to get a similar effect.</p>
-<div class="highlight"><pre><span class="gp">petrum@nuc ~/programming4kids$</span> g++ main.o -o app.exe
+<div class="highlight"><pre><span></span><span class="gp">petrum@nuc ~/programming4kids$</span> g++ main.o -o app.exe
 
 <span class="gp">petrum@nuc ~/programming4kids$</span> ls -ltr
 <span class="go">total 32</span>
@@ -12161,11 +12149,12 @@ Instead of the default <code>a.out</code> out file name we can specify the out f
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="The-end!">The end!<a class="anchor-link" href="#The-end!">&#194;&#182;</a></h1><h2 id="Good-luck-to-U-Mich!!!">Good luck to U-Mich!!!<a class="anchor-link" href="#Good-luck-to-U-Mich!!!">&#194;&#182;</a></h2><h3 id="With-love-daddy!">With love daddy!<a class="anchor-link" href="#With-love-daddy!">&#194;&#182;</a></h3>
+<h1 id="The-end!">The end!<a class="anchor-link" href="#The-end!">&#182;</a></h1><h2 id="Good-luck-to-U-Mich!!!">Good luck to U-Mich!!!<a class="anchor-link" href="#Good-luck-to-U-Mich!!!">&#182;</a></h2><h3 id="With-love-daddy!">With love daddy!<a class="anchor-link" href="#With-love-daddy!">&#182;</a></h3>
 </div>
 </div>
 </div></section></section>
