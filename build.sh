@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+#set -e
 
 git pull
 git add *.ipynb
