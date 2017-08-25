@@ -4,7 +4,7 @@ set -e
 git pull
 git add *.ipynb
 jupyter-nbconvert --to slides programming4kids*.ipynb --reveal-prefix=reveal.js
-sed -i s/simple.css/sky.css/g *.html
+sed -i s/simple.css/black.css/g *.html
 git add *.slides.html
 git commit -ammisc
 git push origin master
