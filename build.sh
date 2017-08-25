@@ -3,7 +3,7 @@ set -e
 
 git pull
 git add *.ipynb
-#jupyter-nbconvert --to slides programming4kids*.ipynb --reveal-prefix=reveal.js --SlidesExporter.reveal_theme=black
+jupyter-nbconvert --to slides programming4kids*.ipynb
 #sed -i s/simple.css/sky.css/g *.html
 
 git add *.slides.html
