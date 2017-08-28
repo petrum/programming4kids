@@ -11975,7 +11975,7 @@ We introduce the output redirection: by using the <code>&gt;</code> redirection 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Running---full-redirection">Running - full redirection<a class="anchor-link" href="#Running---full-redirection">&#182;</a></h1><p><br>
-Here we redirect both <code>stdout</code> and <code>stderr</code>. The app prints nothing on the screen anymore. Both <code>stdout</code> and <code>stderr</code> do into different files. The <code>stdout</code> has the <code>1</code> file handler (or the default) and <code>stderr</code> has the <code>2</code> file handler.</p>
+Here we redirect both <code>stdout</code> and <code>stderr</code>. The app prints nothing on the screen anymore. Both <code>stdout</code> and <code>stderr</code> go into different files. The <code>stdout</code> has the <code>1</code> file handler (or the default) and <code>stderr</code> has the <code>2</code> file handler.</p>
 <div class="highlight"><pre><span></span><span class="gp">petrum@nuc ~/programming4kids$</span> ./a.out Hello World! 2&gt;err.std &gt;out.std
 
 <span class="gp">petrum@nuc ~/programming4kids$</span> ls -ltr
@@ -12022,7 +12022,7 @@ We use the <code>&gt;&gt;</code> operator to append to a file (instead of overwr
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Running-&#8211;-error-code">Running &#8211; error code<a class="anchor-link" href="#Running-&#8211;-error-code">&#182;</a></h1><p><br>
-If we are not interested in reading the app output (and we want to discard it) we can use <code>/dev/null</code> as the file destination. We also can read the code the app returns (in this simple example equals to the number of parameters; remember <code>return argc;</code> in <code>int main()</code>?)</p>
+If we are not interested in reading the app output (and we want to discard it) we can use <code>/dev/null</code> as the file destination. We also can read the code the app returns (in this simple example, the code equals the number of parameters; remember <code>return argc;</code> in <code>int main()</code>?)</p>
 <p>In fact any Linux command returns an error code!</p>
 <p>For example below the <code>ls</code> command return <code>0</code> (no error) if everything is fine or <code>2</code> if the listed fine is not available. Please note each command overides the return code produce by the previous command.</p>
 <div class="highlight"><pre><span></span><span class="gp">petrum@nuc ~/programming4kids$</span> ./a.out Hello World! &gt;/dev/null
