@@ -3,7 +3,7 @@
 
 git pull
 git add *.ipynb
-jupyter-nbconvert --to slides programming4kids*.ipynb
+jupyter-nbconvert --to slides programming4kids*.ipynb --self-containted
 #sed -i s/simple.css/sky.css/g *.html
 
 git add *.slides.html
