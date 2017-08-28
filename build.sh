@@ -3,7 +3,7 @@
 
 git pull
 git add *.ipynb
-jupyter-nbconvert --to slides programming4kids*.ipynb --reveal-prefix /home/petrum/reveal.js
+jupyter-nbconvert --to slides programming4kids*.ipynb
 #sed -i s/simple.css/sky.css/g *.html
 
 git add *.slides.html
