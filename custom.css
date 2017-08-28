@@ -1,0 +1,15 @@
+div.footer {
+font-size:14pt;
+font-style: italic;
+color: #4aaeee;
+text-align: center
+}
+
+body {
+  background: url(logo.png)
+  no-repeat
+  left center;
+padding: 5px 0 5px 25px;
+}
+
+
