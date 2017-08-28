@@ -11848,19 +11848,19 @@ Nothing special, just use <code>vi</code> to edit a simple <code>C++</code> prog
 <span class="go">-rw-rw-r-- 1 petrum petrum 267 Aug 20 08:21 main.cpp</span>
 <span class="gp">petrum@nuc ~/programming4kids$</span> cat main.cpp
 </pre></div>
-<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<pre><code class="c++">
+#include <iostream>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
-<span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;We have received &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">argc</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; arguments.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">argc</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;- argv[&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;] = &#39;&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">argv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;&#39;&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">argc</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
-
+int main(int argc, char* argv[])
+{
+    std::cerr << "We have received " << argc << " arguments.\n";
+    for (int i = 0; i < argc; ++i)
+    {
+        std::cout << "- argv[" << i << "] = '" << argv[i] << "'" << std::endl;
+    }
+    return argc;
+}
+</code></pre>
 </div>
 </div>
 </div></section></section><section><section>
