@@ -21,3 +21,8 @@ petrum@xps13 ~/programming4kids[master]$ ls reveal.js/css/theme/
 README.md  black.css  league.css  night.css  simple.css  solarized.css  template
 beige.css  blood.css  moon.css    serif.css  sky.css     source         white.css
 
+Got an error when running bnconvert about the ```nbconvert``` module missing; fixed by running the command:
+
+```
+$> sudo pip install nbconvert
+```
